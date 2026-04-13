@@ -15,6 +15,7 @@ export interface TruckConfig {
   trailer: {
     tare: number;
     length: number;
+    width: number;
     axleGroupType: 'single' | 'tandem' | 'tridem';
     trailerAxleCount: number;
     kingpinToAxleDistance: number;
@@ -38,7 +39,14 @@ export interface AxleLoadResult {
   };
 }
 
-export interface WeightInput {
-  cargoWeight: number;
-  cargoPosition: number;
+export interface CargoBox {
+  id: string;
+  x: number;
+  y: number;
+  weight: number;
+  width: number;
+  height: number;
+  color: string;
 }
+
+export type CalculatorMode = 'sliders' | 'dragdrop';

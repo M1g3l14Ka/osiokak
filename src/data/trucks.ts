@@ -18,6 +18,7 @@ export const truckConfigs: TruckConfig[] = [
     trailer: {
       tare: 6000,
       length: 13.6,
+      width: 2.5,
       axleGroupType: 'tridem',
       trailerAxleCount: 3,
       kingpinToAxleDistance: 7.0,
@@ -42,6 +43,7 @@ export const truckConfigs: TruckConfig[] = [
     trailer: {
       tare: 5000,
       length: 12.0,
+      width: 2.5,
       axleGroupType: 'tandem',
       trailerAxleCount: 2,
       kingpinToAxleDistance: 6.0,
@@ -66,6 +68,7 @@ export const truckConfigs: TruckConfig[] = [
     trailer: {
       tare: 7000,
       length: 13.6,
+      width: 2.5,
       axleGroupType: 'tridem',
       trailerAxleCount: 3,
       kingpinToAxleDistance: 7.0,
@@ -90,6 +93,7 @@ export const truckConfigs: TruckConfig[] = [
     trailer: {
       tare: 7500,
       length: 12.5,
+      width: 2.5,
       axleGroupType: 'tridem',
       trailerAxleCount: 3,
       kingpinToAxleDistance: 6.8,
@@ -114,6 +118,7 @@ export const truckConfigs: TruckConfig[] = [
     trailer: {
       tare: 4000,
       length: 8.0,
+      width: 2.3,
       axleGroupType: 'tandem',
       trailerAxleCount: 2,
       kingpinToAxleDistance: 4.0,
@@ -138,6 +143,7 @@ export const truckConfigs: TruckConfig[] = [
     trailer: {
       tare: 8000,
       length: 10.0,
+      width: 2.5,
       axleGroupType: 'tandem',
       trailerAxleCount: 2,
       kingpinToAxleDistance: 5.5,
@@ -162,6 +168,7 @@ export const truckConfigs: TruckConfig[] = [
     trailer: {
       tare: 5500,
       length: 12.5,
+      width: 2.5,
       axleGroupType: 'tridem',
       trailerAxleCount: 3,
       kingpinToAxleDistance: 7.2,
