@@ -1,27 +1,52 @@
-export interface TruckConfig {
+export interface TractorConfig {
   id: string;
   name: string;
-  shortName: string;
-  description: string;
-  axles: number;
-  tractor: {
-    frontTare: number;
-    rearTare: number;
-    wheelbase: number;
-    kingpinOffset: number;
-    maxFrontAxle: number;
-    maxRearAxle: number;
-  };
-  trailer: {
-    tare: number;
-    length: number;
-    width: number;
-    axleGroupType: 'single' | 'tandem' | 'tridem';
-    trailerAxleCount: number;
-    kingpinToAxleDistance: number;
-    maxTrailerAxleGroup: number;
-  };
-  maxTotalWeight: number;
+  type: string;
+  tare: number;
+  length: number;
+  height: number;
+  wheelbase: number;
+  frontTare: number;
+  rearTare: number;
+  kingpinOffset: number;
+  maxFrontAxle: number;
+  maxRearAxle: number;
+  rearAxleCount: number;
+  hasLiftAxle: boolean;
+}
+
+export interface TrailerConfig {
+  id: string;
+  name: string;
+  type: string;
+  tare: number;
+  length: number;
+  lengthExtended?: number;
+  height: number;
+  width: number;
+  axleGroupType: 'single' | 'tandem' | 'tridem' | 'quad';
+  trailerAxleCount: number;
+  kingpinToAxleDistance: number;
+  maxTrailerAxleGroup: number;
+  hasTelescope: boolean;
+  axlePositions: number[];
+}
+
+export interface RoadTrain {
+  tractor: TractorConfig;
+  trailer: TrailerConfig;
+  isTelescoped: boolean;
+}
+
+export interface CargoItem {
+  id: string;
+  name: string;
+  weight: number; // kg
+  position: number; // meters from kingpin (0 = at kingpin, max = trailer length)
+  length: number; // physical length of cargo in meters
+  height?: number;
+  cog?: number;
+  color: string;
 }
 
 export interface AxleLoadResult {
@@ -29,24 +54,12 @@ export interface AxleLoadResult {
   rearAxle: number;
   trailerAxles: number[];
   totalWeight: number;
+  totalCargoWeight: number;
   kingpinLoad: number;
-  cargoOnTrailer: number;
-  cargoOnKingpin: number;
   overloads: {
     frontAxle: boolean;
     rearAxle: boolean;
     trailerAxleGroup: boolean;
+    totalWeight: boolean;
   };
 }
-
-export interface CargoBox {
-  id: string;
-  x: number;
-  y: number;
-  weight: number;
-  width: number;
-  height: number;
-  color: string;
-}
-
-export type CalculatorMode = 'sliders' | 'dragdrop';
