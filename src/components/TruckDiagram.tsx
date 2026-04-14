@@ -95,7 +95,7 @@ export function TruckDiagram({
       const dm = dx / SCALE;
       const item = cargoItems.find((c) => c.id === dragging);
       if (item) {
-        let rawPos = dragRef.current.position + dm;
+        const rawPos = dragRef.current.position + dm;
         const resolved = resolveOverlap(dragging, rawPos, item.length);
         onDrop(dragging, { position: resolved });
       }

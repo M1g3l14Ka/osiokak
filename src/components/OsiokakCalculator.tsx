@@ -165,7 +165,6 @@ export default function OsiokakCalculator() {
         {selectedCargo && (
           <CargoEditor
             cargo={selectedCargo}
-            trailerLength={trailerLength}
             onChange={(updates) => updateCargo(selectedCargo!.id, updates)}
             onMove={moveCargo}
           />

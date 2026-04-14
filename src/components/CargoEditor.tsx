@@ -4,14 +4,12 @@ import { CargoItem } from "@/types";
 
 interface CargoEditorProps {
   cargo: CargoItem;
-  trailerLength: number;
   onChange: (updates: Partial<CargoItem>) => void;
   onMove: (id: string, direction: "left" | "right") => void;
 }
 
 export function CargoEditor({
   cargo,
-  trailerLength,
   onChange,
   onMove,
 }: CargoEditorProps) {
